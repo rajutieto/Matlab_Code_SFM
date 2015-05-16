@@ -10,17 +10,24 @@ close all;
 addpath(genpath('matchSIFT'));
 addpath(genpath('denseMatch'));
 addpath(genpath('RtToolbox'));
+addpath(genpath('images'));
 
 visualize = false;
 
 %% data
 
 
-frames.images{1}='images/mehpened1.jpg';
-frames.images{2}='images/mehpened6.jpg';
-frames.images{3}='images/mehpened11.jpg';
-frames.images{4}='images/mehpened16.jpg';
-frames.images{5}='images/mehpened21.jpg';
+% frames.images{1}='images/mehpened1.jpg';
+% frames.images{2}='images/mehpened6.jpg';
+% frames.images{3}='images/mehpened11.jpg';
+% frames.images{4}='images/mehpened16.jpg';
+% frames.images{5}='images/mehpened21.jpg';
+
+frames.images{1}='images/B21.jpg';
+frames.images{2}='images/B22.jpg';
+frames.images{3}='images/B23.jpg';
+frames.images{4}='images/B24.jpg';
+frames.images{5}='images/B25.jpg';
 
 
 %{
@@ -175,6 +182,7 @@ end
 
 fprintf('dense matching ...\n');
 for frame=1:frames.length-1
+    display(frame);
     Graph{frame} = denseMatch(Graph{frame}, frames, frame, frame+1);
 end
 

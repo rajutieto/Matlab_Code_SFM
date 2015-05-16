@@ -183,7 +183,10 @@ end
 
 fprintf('dense matching ...\n');
 for frame=1:frames.length-1
+<<<<<<< HEAD
     display(frame);
+=======
+>>>>>>> e13bfeec0cda6d033ddda8975e6c35b929b29f62
     Graph{frame} = denseMatch(Graph{frame}, frames, frame, frame+1);
 end
 
